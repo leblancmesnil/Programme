@@ -1,0 +1,21 @@
+.page { padding-top: .5rem; }
+
+.page-title { font-size: 1.5rem; font-weight: 800; color: #1B4965; margin-bottom: .5rem; }
+.page-intro { font-size: .9rem; color: #555; font-style: italic; margin-bottom: 1.25rem; line-height: 1.6; }
+
+.cent-jours-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: .75rem;
+}
+.cent-jours-item {
+  background: #fff; border-radius: .5rem; padding: .85rem 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); display: flex; align-items: flex-start; gap: .75rem;
+  p { margin: 0; font-size: .85rem; color: #333; line-height: 1.5; }
+}
+.jour-badge {
+  background: #E63946; color: #fff; font-weight: 800; font-size: .75rem;
+  padding: .3rem .6rem; border-radius: .35rem; white-space: nowrap; min-width: 38px; text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cent-jours-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,37 @@
+.page { padding-top: .5rem; }
+
+.projet-card {
+  background: #fff; border-radius: .75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); margin-bottom: .75rem; overflow: hidden;
+}
+.projet-header {
+  display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; transition: background .2s;
+  &:hover { background: #f8f9fa; }
+}
+.projet-icon { font-size: 2rem; min-width: 48px; text-align: center; }
+.projet-info {
+  flex: 1; min-width: 0;
+  h3 { margin: 0 0 .25rem; font-size: 1rem; font-weight: 700; color: #212529; }
+  p  { margin: 0; font-size: .85rem; color: #666; line-height: 1.4; }
+}
+.projet-toggle { font-size: .8rem; color: #999; }
+.projet-body {
+  padding: 0 1.25rem 1.25rem; border-top: 1px solid #f0f0f0;
+  h4  { font-size: .85rem; font-weight: 700; color: #1B4965; margin: 1rem 0 .5rem; text-transform: uppercase; letter-spacing: .03em; }
+  ul  { margin: 0; padding-left: 1.25rem; }
+  li  { font-size: .9rem; color: #444; line-height: 1.6; }
+}
+.projet-impacts {
+  background: #f0f7fc; border-radius: .5rem; padding: .75rem 1rem; margin-top: .5rem;
+  ul { padding-left: 1.25rem; margin: 0; }
+  li { font-size: .88rem; color: #1B4965; line-height: 1.5; }
+}
+
+// ── Composantes détaillées ──
+.composante-item {
+  background: #f8f9fa; border-radius: .4rem; padding: .75rem 1rem; margin-bottom: .5rem;
+  border-left: 3px solid #dee2e6;
+}
+.composante-titre { font-size: .9rem; font-weight: 700; color: #1B4965; display: block; margin-bottom: .25rem; }
+.composante-detail { font-size: .85rem; color: #555; line-height: 1.5; margin: 0; }
+

@@ -1,0 +1,15 @@
+<div class="page">
+
+  <h2 class="page-title">Ce qui change en 100 jours</h2>
+  <p class="page-intro">En 100 jours, les outils de transparence sont en place, les premiers services ouverts, et les habitants peuvent suivre l'avancement en temps réel.</p>
+
+  <div class="cent-jours-grid">
+    @for (item of centJours; track $index) {
+      <div class="cent-jours-item">
+        <span class="jour-badge">{{ item.jour }}</span>
+        <p>{{ item.action }}</p>
+      </div>
+    }
+  </div>
+
+</div>

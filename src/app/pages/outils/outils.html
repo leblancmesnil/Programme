@@ -1,0 +1,81 @@
+<section class="outils-page">
+  <header class="page-header">
+    <h1>Outils Numériques</h1>
+    <p class="subtitle">
+      Six outils open source pour une mairie transparente, collaborative et évaluable.
+      Déployés en trois vagues sur le mandat.
+    </p>
+  </header>
+
+  <div class="vague-legend">
+    <span class="badge vague-1">Vague 1 – J+180</span>
+    <span class="badge vague-2">Vague 2 – An 2</span>
+    <span class="badge vague-3">Vague 3 – An 3</span>
+  </div>
+
+  <!-- ═══ Section 1 : Accès rapide aux plateformes ═══ -->
+  <h2 class="section-heading">Accéder aux plateformes</h2>
+  <div class="acces-grid">
+    @for (outil of outils; track outil.sigle) {
+      <div class="acces-card" [class.acces-actif]="outil.actif" [class.acces-inactif]="!outil.actif">
+        <div class="acces-left">
+          <img class="tool-icon" src="{{ outil.iconPath || 'assets/icons/default.svg' }}" alt="{{ outil.sigle }} icon">
+          <span class="acces-sigle">{{ outil.sigle }}</span>
+          <span class="badge vague-{{ outil.vague }}">V{{ outil.vague }}</span>
+        </div>
+        <div class="acces-center">
+          <span class="acces-nom">{{ outil.nom }}</span>
+        </div>
+        <div class="acces-right">
+          @if (outil.actif) {
+            <a class="acces-btn live" [href]="outil.url" target="_blank" rel="noopener noreferrer">Ouvrir →</a>
+          } @else {
+            <span class="acces-btn soon">À venir</span>
+          }
+          <a class="acces-btn detail" href="/outils#outil-{{ outil.sigle }}">Détails</a>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- ═══ Section 2 : Détail de chaque outil ═══ -->
+  <h2 class="section-heading">Comprendre chaque outil</h2>
+  <div class="detail-grid">
+    @for (outil of outils; track outil.sigle) {
+      <div class="detail-card" id="outil-{{ outil.sigle }}" [class.enq-card]="outil.quartiers">
+        <div class="card-header">
+          <div class="card-left">
+            <span class="sigle">{{ outil.sigle }}</span>
+            <img class="tool-icon" src="{{ outil.iconPath || 'assets/icons/default.svg' }}" alt="{{ outil.nom }} icon">
+          </div>
+          <span class="badge vague-{{ outil.vague }}">Vague {{ outil.vague }}</span>
+        </div>
+        <h3>{{ outil.nom }}</h3>
+        <p>{{ outil.description }}</p>
+        @if (outil.services) {
+          <ul class="enq-services">
+            @for (s of outil.services; track s.titre) {
+              <li><strong>{{ s.titre }}</strong> — {{ s.detail }}</li>
+            }
+          </ul>
+        }
+        @if (outil.regle) {
+          <p class="enq-regle">{{ outil.regle }}</p>
+        }
+        @if (outil.quartiers) {
+          <div class="enq-quartiers">
+            <h4>Les 21 quartiers ENQ</h4>
+            <ol class="quartiers-grid">
+              @for (q of outil.quartiers; track q.n) {
+                <li><span class="q-num">{{ q.n }}</span> {{ q.nom }}</li>
+              }
+            </ol>
+          </div>
+        }
+        <div class="detail-actions">
+          <a class="acces-btn detail in-card" href="/outils">Haut de page</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>

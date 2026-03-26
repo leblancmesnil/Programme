@@ -1,0 +1,150 @@
+<div class="page">
+
+  <h2 class="page-title">Les mesures — par chapitre</h2>
+
+  <!-- Matrice de priorisation -->
+  <div class="matrice-priorisation">
+    <h3>Matrice de priorisation — Niveaux A / B / C</h3>
+    <p class="matrice-intro">213 mesures ne signifie pas 213 urgences. Chaque mesure est classée selon trois niveaux de priorité, visibles sur la PSE :</p>
+    <table class="matrice-table">
+      <thead>
+        <tr><th>Niveau</th><th>Définition</th><th>Nombre</th><th>Phase</th></tr>
+      </thead>
+      <tbody>
+        @for (m of matricePrio; track m.niveau) {
+          <tr>
+            <td><span class="badge priorite-{{ m.niveau.toLowerCase() }}">{{ m.niveau }} — {{ m.label }}</span></td>
+            <td>{{ m.definition }}</td>
+            <td>{{ m.nombre }}</td>
+            <td>{{ m.phase }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+    <p class="matrice-principe">{{ principeAbc }}</p>
+  </div>
+
+  <!-- Filtres -->
+  <div class="filter-bar">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text"
+             placeholder="Rechercher une mesure (n° ou mot-clé)…"
+             [ngModel]="searchText"
+             (ngModelChange)="searchText = $event; onSearch($event)">
+    </div>
+
+    <select class="filter-select" (change)="onFiltreChapitre($event)">
+      <option value="">Tous les chapitres</option>
+      @for (ch of allChapitres; track ch.id) {
+        <option [value]="ch.id">{{ ch.icone }} {{ ch.titre }}</option>
+      }
+    </select>
+
+    <select class="filter-select" (change)="onFiltrePriorite($event)">
+      <option value="">Toutes priorités</option>
+      <option value="A">A — Impact immédiat</option>
+      <option value="B">B — Structurant</option>
+      <option value="C">C — Long terme</option>
+    </select>
+
+    <button class="btn-reset" (click)="resetFiltres()">Réinitialiser</button>
+  </div>
+
+  <!-- Chapitres -->
+  @for (chapitre of chapitresFiltres(); track chapitre.id) {
+    <div class="chapitre-card">
+      <div class="chapitre-header" (click)="toggleChapitre(chapitre.id)">
+        <div class="chapitre-icon" [style.background]="chapitre.couleur">
+          {{ chapitre.icone }}
+        </div>
+        <div class="chapitre-info">
+          <h3>Chapitre {{ chapitre.id }} — {{ chapitre.titre }}</h3>
+          <span class="chapitre-range">Mesures {{ chapitre.mesuresRange }} · {{ chapitre.mesures.length }} mesures</span>
+        </div>
+        <span class="chapitre-toggle">{{ chapitreOuvert === chapitre.id ? '▲' : '▼' }}</span>
+      </div>
+
+      @if (chapitreOuvert === chapitre.id) {
+        <div class="chapitre-body">
+          <blockquote class="chapitre-vision">{{ chapitre.vision }}</blockquote>
+
+          @if ($any(chapitre).objectifsAssumes) {
+            <p class="objectifs-assumes">{{ $any(chapitre).objectifsAssumes }}</p>
+          }
+
+          <div class="chapitre-objectifs">
+            <h4>Objectifs stratégiques</h4>
+            <ul>
+              @for (obj of chapitre.objectifs; track $index) {
+                <li>{{ obj }}</li>
+              }
+            </ul>
+          </div>
+
+          @if ($any(chapitre).principes?.length) {
+            <div class="chapitre-principes">
+              <h4>Principes</h4>
+              <div class="principes-pills">
+                @for (p of $any(chapitre).principes; track $index) {
+                  <span class="principe-pill">{{ p }}</span>
+                }
+              </div>
+            </div>
+          }
+
+          <div class="chapitre-mesures">
+            <h4>Mesures</h4>
+            @for (mesure of chapitre.mesures; track mesure.id) {
+              <div class="mesure-wrapper">
+                <div class="mesure-row" [class.mesure-row-a]="mesure.priorite === 'A'"
+                     (click)="mesure.priorite === 'A' ? toggleFiche(mesure.id) : null">
+                  <span class="mesure-num" [style.background]="chapitre.couleur">{{ mesure.id }}</span>
+                  <span class="mesure-titre">{{ mesure.titre }}</span>
+                  <span [class]="getPrioriteClass(mesure.priorite)">{{ mesure.priorite }}</span>
+                  @if (mesure.priorite === 'A') {
+                    <span class="fiche-toggle">{{ ficheOuverte === mesure.id ? '▲' : '▼' }}</span>
+                  }
+                </div>
+                @if (mesure.priorite === 'A' && ficheOuverte === mesure.id && getFiche(mesure.id)) {
+                  <div class="fiche-engagement">
+                    <div class="fiche-row"><span class="fiche-label">Besoin</span><span>{{ getFiche(mesure.id)!.besoin }}</span></div>
+                    <div class="fiche-row"><span class="fiche-label">Action</span><span>{{ getFiche(mesure.id)!.action }}</span></div>
+                    <div class="fiche-row"><span class="fiche-label">Livrable</span><span>{{ getFiche(mesure.id)!.livrable }}</span></div>
+                    <div class="fiche-row"><span class="fiche-label">KPI</span><span>{{ getFiche(mesure.id)!.kpi }}</span></div>
+                    <div class="fiche-row"><span class="fiche-label">Dépendances</span><span>{{ getFiche(mesure.id)!.dependances }}</span></div>
+                    <div class="fiche-row"><span class="fiche-label">Coût</span><span>{{ getFiche(mesure.id)!.cout }}</span></div>
+                  </div>
+                }
+              </div>
+            }
+          </div>
+
+          <div class="chapitre-mise-en-oeuvre">
+            <h4>Mise en œuvre</h4>
+            <p>{{ chapitre.miseEnOeuvre }}</p>
+          </div>
+
+          @if ($any(chapitre).enqQuartiers?.length) {
+            <div class="enq-quartiers">
+              <h4>Les 21 quartiers ENQ</h4>
+              <div class="quartiers-grid">
+                @for (q of $any(chapitre).enqQuartiers; track $index; let n = $index) {
+                  <span class="quartier-item"><span class="quartier-num">{{ n + 1 }}</span>{{ q }}</span>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  }
+
+  @if (chapitresFiltres().length === 0) {
+    <div class="empty-state">
+      <p>Aucune mesure ne correspond à vos critères.</p>
+      <button class="btn-reset" (click)="resetFiltres()">Réinitialiser les filtres</button>
+    </div>
+  }
+
+</div>

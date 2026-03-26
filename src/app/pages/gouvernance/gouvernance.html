@@ -1,0 +1,77 @@
+<div class="page">
+
+  <h2 class="page-title">Gouvernance</h2>
+  <p class="page-intro">
+    Six outils numériques open source forment le système nerveux de la gouvernance municipale.
+    Développés par une association locale de jeunes, déployés en 3 vagues progressives, doublés d'équivalents physiques.
+  </p>
+
+  <!-- 6 outils numériques -->
+  <h3 class="section-title">Les 6 outils numériques</h3>
+  <div class="outils-grid">
+    @for (outil of outilsNumeriques; track outil.sigle) {
+      <div class="outil-card" [class.outil-ouvert]="outilOuvert === outil.sigle">
+        <div class="outil-header" (click)="toggleOutil(outil.sigle)">
+          <div class="outil-meta">
+            <span class="outil-sigle">{{ outil.sigle }}</span>
+            <span class="outil-vague-badge">Vague {{ outil.vague }}</span>
+          </div>
+          <div class="outil-nom">{{ outil.nom }}</div>
+          <p class="outil-fonction">{{ outil.fonction }}</p>
+          <span class="outil-toggle">{{ outilOuvert === outil.sigle ? '▲' : '▼' }}</span>
+        </div>
+        @if (outilOuvert === outil.sigle) {
+          <div class="outil-detail">
+            <p>{{ outil.detail }}</p>
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- 3 vagues MVP -->
+  <h3 class="section-title">Stratégie de déploiement — 3 vagues MVP</h3>
+  <div class="vagues-grid">
+    @for (v of vaguesMvp; track v.vague) {
+      <div class="vague-card">
+        <div class="vague-header">
+          <span class="vague-num">Vague {{ v.vague }}</span>
+          <span class="vague-periode">{{ v.periode }}</span>
+        </div>
+        <div class="vague-outils">{{ v.outils }}</div>
+        <p class="vague-perimetre"><strong>Numérique :</strong> {{ v.perimetre }}</p>
+        <p class="vague-lowtech"><strong>Low-tech :</strong> {{ v.lowTech }}</p>
+      </div>
+    }
+  </div>
+
+  <!-- Gouvernance des outils -->
+  <h3 class="section-title">Gouvernance des outils</h3>
+  <div class="gouvernance-table">
+    @for (row of gouvernanceOutils; track $index) {
+      <div class="gouvernance-row">
+        <span class="gouvernance-question">{{ row.question }}</span>
+        <span class="gouvernance-reponse">{{ row.reponse }}</span>
+      </div>
+    }
+  </div>
+
+  <!-- 6 principes transversaux -->
+  <h3 class="section-title">6 principes transversaux du mandat</h3>
+  <p class="page-intro">Ces principes s'appliquent à toutes les phases et toutes les mesures.</p>
+  <div class="principes-grid">
+    @for (p of principesTransversaux; track p.num) {
+      <div class="principe-item">
+        <span class="principe-num">{{ p.num }}</span>
+        <div>
+          <strong>{{ p.titre }}</strong>
+          <p>{{ p.detail }}</p>
+        </div>
+      </div>
+    }
+  </div>
+
+  <blockquote class="citation">
+    Nous ne promettons pas une démocratie parfaite. Nous construisons une démocratie outillée, responsable et exigeante.
+  </blockquote>
+</div>

@@ -1,0 +1,152 @@
+.page { padding-top: .5rem; }
+
+// ── Matrice de priorisation ──
+.matrice-priorisation {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border-radius: .75rem;
+  border: 1px solid #dee2e6;
+
+  h3 { font-size: 1rem; font-weight: 700; margin: 0 0 .5rem; color: #1B4965; }
+
+  .matrice-intro { font-size: .85rem; color: #555; margin: 0 0 .75rem; }
+
+  .matrice-principe {
+    font-size: .8rem; color: #555; font-style: italic; margin: .75rem 0 0;
+    border-left: 3px solid #dee2e6; padding-left: .75rem;
+  }
+}
+
+.matrice-table {
+  width: 100%; border-collapse: collapse; font-size: .82rem;
+
+  th { text-align: left; padding: .5rem .6rem; background: #e9ecef; font-weight: 600; color: #333; border-bottom: 2px solid #dee2e6; }
+  td { padding: .5rem .6rem; border-bottom: 1px solid #eee; vertical-align: top; }
+
+  @media (max-width: 640px) {
+    display: block;
+    th { display: none; }
+    tr { display: block; margin-bottom: .75rem; border: 1px solid #eee; border-radius: .5rem; padding: .5rem; }
+    td { display: block; padding: .25rem 0; border: none; }
+  }
+}
+
+// ── Filters ──
+.filter-bar {
+  display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-bottom: 1.25rem;
+}
+.search-box {
+  flex: 1 1 280px; position: relative;
+  .search-icon { position: absolute; left: .75rem; top: 50%; transform: translateY(-50%); font-size: 1rem; pointer-events: none; }
+  input {
+    width: 100%; padding: .6rem .75rem .6rem 2.5rem; border: 1px solid #dee2e6;
+    border-radius: .5rem; font-size: .95rem; background: #fff; box-sizing: border-box;
+    &:focus { outline: none; border-color: #0077B6; box-shadow: 0 0 0 3px rgba(0,119,182,.15); }
+  }
+}
+.filter-select {
+  padding: .6rem .75rem; border: 1px solid #dee2e6; border-radius: .5rem;
+  font-size: .85rem; background: #fff; cursor: pointer; min-width: 160px;
+  &:focus { outline: none; border-color: #0077B6; box-shadow: 0 0 0 3px rgba(0,119,182,.15); }
+}
+
+// ── Chapter cards ──
+.chapitre-card {
+  background: #fff; border-radius: .75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.06); margin-bottom: .75rem; overflow: hidden;
+}
+.chapitre-header {
+  display: flex; align-items: center; gap: 1rem; padding: 1rem 1.25rem; cursor: pointer; transition: background .2s;
+  &:hover { background: #f8f9fa; }
+}
+.chapitre-icon {
+  width: 48px; height: 48px; min-width: 48px; border-radius: .6rem;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff;
+}
+.chapitre-info {
+  flex: 1; min-width: 0;
+  h3 { margin: 0; font-size: 1rem; font-weight: 700; color: #212529; }
+}
+.chapitre-range { font-size: .8rem; color: #888; }
+.chapitre-toggle { font-size: .8rem; color: #999; }
+
+.chapitre-body { padding: 0 1.25rem 1.25rem; border-top: 1px solid #f0f0f0; }
+.chapitre-vision { margin: 1rem 0; }
+
+.chapitre-objectifs {
+  h4 { font-size: .85rem; font-weight: 700; color: #1B4965; margin: 1rem 0 .5rem; text-transform: uppercase; letter-spacing: .03em; }
+  ul { margin: 0; padding-left: 1.25rem; }
+  li { font-size: .9rem; color: #444; line-height: 1.6; }
+}
+.chapitre-mesures {
+  h4 { font-size: .85rem; font-weight: 700; color: #1B4965; margin: 1rem 0 .5rem; text-transform: uppercase; letter-spacing: .03em; }
+}
+.mesure-row {
+  display: flex; align-items: center; gap: .75rem; padding: .4rem 0; border-bottom: 1px solid #f5f5f5;
+}
+.mesure-num {
+  width: 36px; height: 28px; min-width: 36px; border-radius: .35rem; color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .75rem;
+}
+.mesure-titre { flex: 1; font-size: .9rem; color: #333; }
+
+.chapitre-mise-en-oeuvre {
+  h4 { font-size: .85rem; font-weight: 700; color: #1B4965; margin: 1rem 0 .5rem; text-transform: uppercase; letter-spacing: .03em; }
+  p  { font-size: .9rem; color: #444; line-height: 1.6; margin: 0; }
+}
+
+// ── Fiche engagement ──
+.mesure-wrapper { border-bottom: 1px solid #f5f5f5; }
+.mesure-row { border-bottom: none !important; }
+.mesure-row-a { cursor: pointer; &:hover { background: #f8f9fa; } }
+.fiche-toggle { font-size: .7rem; color: #1B4965; margin-left: auto; }
+.fiche-engagement {
+  background: #f0f7ff; border-radius: .5rem; margin: .25rem 0 .5rem; padding: .75rem 1rem;
+  display: flex; flex-direction: column; gap: .4rem;
+}
+.fiche-row {
+  display: flex; gap: .75rem; font-size: .82rem; align-items: baseline;
+}
+.fiche-label {
+  font-weight: 700; color: #1B4965; min-width: 100px; font-size: .75rem;
+  text-transform: uppercase; letter-spacing: .03em;
+}
+
+// ── Principes ──
+.chapitre-principes {
+  h4 { font-size: .85rem; font-weight: 700; color: #1B4965; margin: 1rem 0 .5rem; text-transform: uppercase; letter-spacing: .03em; }
+}
+.principes-pills { display: flex; flex-wrap: wrap; gap: .4rem; }
+.principe-pill {
+  background: #e8f4f8; color: #1B4965; font-size: .78rem; font-weight: 600;
+  padding: .25rem .6rem; border-radius: 2rem; border: 1px solid #c5dfed;
+}
+
+// ── Objectifs assumés ──
+.objectifs-assumes {
+  background: #fff3cd; border-left: 3px solid #ffc107; border-radius: .25rem;
+  padding: .6rem .85rem; font-size: .88rem; color: #664d03; line-height: 1.5;
+  margin: .75rem 0; font-style: italic;
+}
+
+// ── ENQ quartiers ──
+.enq-quartiers {
+  margin-top: 1rem;
+  h4 { font-size: .85rem; font-weight: 700; color: #1B4965; margin: 0 0 .5rem; text-transform: uppercase; letter-spacing: .03em; }
+}
+.quartiers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: .35rem; }
+.quartier-item { display: flex; gap: .4rem; font-size: .82rem; color: #444; align-items: center; }
+.quartier-num {
+  background: #1B4965; color: #fff; font-size: .65rem; font-weight: 800;
+  width: 22px; height: 22px; min-width: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .filter-bar  { flex-direction: column; }
+  .search-box  { flex: 1 1 100%; }
+  .filter-select { width: 100%; min-width: 0; }
+  .fiche-label { min-width: 80px; }
+  .quartiers-grid { grid-template-columns: 1fr 1fr; }
+}

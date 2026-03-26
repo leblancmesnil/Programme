@@ -1,0 +1,140 @@
+<div class="page">
+  <h2 class="page-title">Timeline — 5 ans</h2>
+
+  <!-- Années -->
+  <div class="timeline">
+    @for (t of timeline; track t.annee) {
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="timeline-year">{{ t.annee }}</span>
+        </div>
+        <div class="timeline-content">
+          <p>{{ t.livrables }}</p>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Frise Année 1 détaillée -->
+  <div class="section-collapsible">
+    <div class="section-collapsible-header" (click)="friseOuverte = !friseOuverte">
+      <h3>Frise détaillée — Année 1 (par trimestre)</h3>
+      <span>{{ friseOuverte ? '▲' : '▼' }}</span>
+    </div>
+    @if (friseOuverte) {
+      <div class="frise-grid">
+        @for (trimestre of friseAnnee1; track $index) {
+          <div class="frise-trimestre">
+            <h4>{{ trimestre.trimestre }}</h4>
+            <ul>
+              @for (action of trimestre.actions; track $index) {
+                <li>{{ action }}</li>
+              }
+            </ul>
+          </div>
+        }
+      </div>
+      <p class="marqueur-credibilite"><strong>Marqueurs de crédibilité Année 1 :</strong> audit financier publié, PSE consultable, premiers guichets ouverts, patrouilles visibles, PCS opérationnel, campus trilingue — décision formelle prise.</p>
+    }
+  </div>
+
+  <!-- Plan de mise en œuvre — Phases 1, 2, 3 -->
+  <div class="section-collapsible">
+    <div class="section-collapsible-header" (click)="phasesOuvertes = !phasesOuvertes">
+      <h3>Plan de mise en œuvre — Phases 1, 2 et 3</h3>
+      <span>{{ phasesOuvertes ? '▲' : '▼' }}</span>
+    </div>
+    @if (phasesOuvertes) {
+      @for (phase of phasesDetail; track phase.phase) {
+        <div class="phase-block">
+          <h4 class="phase-titre">{{ phase.phase }} <span class="phase-periode">({{ phase.periode }})</span></h4>
+          <p class="phase-objectif">{{ phase.objectif }}</p>
+          <div class="phase-domaines">
+            @for (d of phase.domaines; track d.domaine) {
+              <div class="phase-domaine-row">
+                <div class="phase-domaine-header">
+                  <span class="phase-domaine-nom">{{ d.domaine }}</span>
+                  <span class="phase-domaine-mesures">Mesures {{ d.mesures }}</span>
+                </div>
+                <p class="phase-domaine-actions">{{ d.actions }}</p>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- Campus trilingue -->
+  <div class="section-collapsible">
+    <div class="section-collapsible-header" (click)="campusOuvert = !campusOuvert">
+      <h3>Campus trilingue — Situation héritée et trajectoire</h3>
+      <span>{{ campusOuvert ? '▲' : '▼' }}</span>
+    </div>
+    @if (campusOuvert) {
+      <div class="campus-content">
+        <p>{{ campusTrilingue.contexte }}</p>
+
+        <h4>Actions prioritaires (Mois 0–3)</h4>
+        <ul>
+          @for (p of campusTrilingue.prioritesMois03; track $index) {
+            <li>{{ p }}</li>
+          }
+        </ul>
+
+        <div class="scenarios-grid">
+          <div class="scenario-card scenario-a">
+            <h4>{{ campusTrilingue.scenarioA.titre }}</h4>
+            <p class="scenario-condition">{{ campusTrilingue.scenarioA.condition }}</p>
+            <ul>
+              @for (a of campusTrilingue.scenarioA.actions; track $index) {
+                <li>{{ a }}</li>
+              }
+            </ul>
+          </div>
+          <div class="scenario-card scenario-b">
+            <h4>{{ campusTrilingue.scenarioB.titre }}</h4>
+            <p class="scenario-condition">{{ campusTrilingue.scenarioB.condition }}</p>
+            <div class="campus-phases">
+              @for (ph of campusTrilingue.scenarioB.phases; track $index) {
+                <div class="campus-phase-row">
+                  <span class="campus-phase-label">{{ ph.phase }}</span>
+                  <span class="campus-phase-periode">{{ ph.periode }}</span>
+                  <span>{{ ph.actions }}</span>
+                </div>
+              }
+            </div>
+            <p><strong>Risques :</strong> {{ campusTrilingue.scenarioB.risques }}</p>
+            <p><strong>Atténuation :</strong> {{ campusTrilingue.scenarioB.attenuation }}</p>
+          </div>
+        </div>
+        <blockquote>{{ campusTrilingue.recommandation }}</blockquote>
+      </div>
+    }
+  </div>
+
+  <!-- Indicateurs clés de suivi -->
+  <div class="section-collapsible">
+    <div class="section-collapsible-header" (click)="indicateursOuverts = !indicateursOuverts">
+      <h3>Indicateurs clés de suivi — Cibles fin de mandat</h3>
+      <span>{{ indicateursOuverts ? '▲' : '▼' }}</span>
+    </div>
+    @if (indicateursOuverts) {
+      <div class="indicateurs-table">
+        <div class="indicateurs-header-row">
+          <span>Domaine</span>
+          <span>Indicateurs</span>
+          <span>Cible fin de mandat</span>
+        </div>
+        @for (row of indicateursSuivi; track $index) {
+          <div class="indicateurs-row">
+            <span class="indicateurs-domaine">{{ row.domaine }}</span>
+            <span>{{ row.indicateurs }}</span>
+            <span class="indicateurs-cible">{{ row.cible }}</span>
+          </div>
+        }
+      </div>
+      <p class="note-indicateurs">Ces cibles sont indicatives et seront ajustées après l'audit de début de mandat (mesure 208). Elles sont publiées sur la PSE et révisées annuellement.</p>
+    }
+  </div>
+</div>

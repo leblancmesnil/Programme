@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "titre": "Programme de Mandat — Blanc-Mesnil Uni",
+    "sousTitre": "213 mesures pour une ville digne, sûre et ambitieuse",
+    "datePublication": "2026-03-26",
+    "version": "1.0.0"
+  },
+  "vision": "Une ville digne garantit la sécurité, la santé, l'éducation, l'emploi et la qualité de vie pour tous. Ce programme vise à transformer la gouvernance municipale en une gouvernance outillée, transparente et tournée vers l'évaluation, tout en déployant des politiques concrètes pour améliorer le quotidien et préparer l'avenir.",
+  "piliers": [
+    "Gouvernance outillée — transparence, évaluation continue, participation citoyenne structurée.",
+    "Politiques de proximité — sécurité, santé, éducation, emploi, solidarité, culture, écologie : chaque politique est ancrée dans les quartiers.",
+    "Projets d'envergure — ZAC de la Molette (parc, arène, campus trilingue), rénovation des Tilleuls, Maison de l'Emploi, plan santé.",
+    "Partenariats avec le privé — tisser des partenariats stratégiques avec des acteurs privés pour accélérer et co-financer la réalisation du projet global.",
+    "Pouvoir d'achat — stratégie transversale pour réduire les principales dépenses des habitants grâce à la force de négociation collective de la ville."
+  ],
+  "mesuresPhares": [
+    { "id": 1,   "titre": "Suivi public des engagements (PSE)",             "chapitre": "Gouvernance" },
+    { "id": 3,   "titre": "Transparence budgétaire renforcée",              "chapitre": "Gouvernance" },
+    { "id": 21,  "titre": "Programme municipal de rénovation énergétique",  "chapitre": "Logement" },
+    { "id": 30,  "titre": "Renforcement de la police municipale",           "chapitre": "Sécurité" },
+    { "id": 44,  "titre": "Maison de santé pluridisciplinaire 360",         "chapitre": "Santé" },
+    { "id": 47,  "titre": "Mutuelle communale",                             "chapitre": "Santé" },
+    { "id": 87,  "titre": "Plan global de rénovation des écoles",           "chapitre": "Éducation" },
+    { "id": 88,  "titre": "Campus trilingue (école privée sous contrat)",   "chapitre": "Éducation" },
+    { "id": 101, "titre": "Programme « Les Ambassadeurs »",                 "chapitre": "Jeunesse" },
+    { "id": 116, "titre": "Maison de l'emploi et de l'entrepreneuriat",    "chapitre": "Emploi" },
+    { "id": 131, "titre": "Gratuité des transports pour les mineurs",       "chapitre": "Mobilité" },
+    { "id": 148, "titre": "Programmation culturelle de proximité (arène)",  "chapitre": "Culture" },
+    { "id": 179, "titre": "Plan municipal de végétalisation",               "chapitre": "Écologie" },
+    { "id": 194, "titre": "Plan Communal de Sauvegarde",                    "chapitre": "Résilience" },
+    { "id": 201, "titre": "Budgets participatifs renforcés",                "chapitre": "Démocratie" }
+  ],
+  "profils": [
+    { "nom": "Parent",                  "description": "École, périscolaire, cantine, sécurité abords scolaires, centres de loisirs, tenues scolaires",                      "mesures": "35, 86–100, 131" },
+    { "nom": "Senior / aidant",         "description": "Maison des seniors, maintien à domicile, navettes, lutte contre l'isolement, fracture numérique",                    "mesures": "57, 81, 162–176" },
+    { "nom": "Commerçant / entrepreneur","description": "Maison de l'Emploi (ZI du Coudray), vacance commerciale, clauses d'insertion, incubateur",                         "mesures": "116–130" },
+    { "nom": "Demandeur de logement",   "description": "Guichet unique, transparence attributions, rénovation, habitat indigne",                                             "mesures": "13–29" },
+    { "nom": "Jeune (16-25 ans)",       "description": "Ambassadeurs, mentorat, emploi, mobilité, espaces jeunesse, éducation financière",                                   "mesures": "101–115, 131" },
+    { "nom": "Tranquillité au quotidien","description": "Éclairage, incivilités, propreté, médiation, patrouilles de proximité",                                             "mesures": "30–43, 179, 186" },
+    { "nom": "Suivi des finances",      "description": "Budget pédagogique, audits, marchés publics, budgets participatifs",                                                 "mesures": "1, 3, 6, 201–213" }
+  ],
+  "preuvesMethode": [
+    "Audit financier de début de mandat (mois 0–4) — un état des lieux indépendant, publié intégralement.",
+    "Bilans annuels par quartier — chaque année, présentation publique de l'avancement mesure par mesure.",
+    "Évaluation indépendante à mi-mandat — un cabinet externe mesure les résultats et publie ses conclusions.",
+    "Audit financier de mi-mandat — deuxième photographie des comptes, comparée à l'audit initial.",
+    "Rapport de fin de mandat public — bilan exhaustif : ce qui a été livré, ce qui ne l'a pas été, et pourquoi."
+  ]
+}

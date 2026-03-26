@@ -1,0 +1,87 @@
+<div class="page">
+
+  <!-- Glossaire -->
+  <h2 class="page-title">Annexes et références</h2>
+
+  <h3 class="section-title">Glossaire des sigles</h3>
+  <div class="glossaire-grid">
+    @for (item of glossaire; track item.sigle) {
+      <div class="glossaire-item">
+        <span class="glossaire-sigle">{{ item.sigle }}</span>
+        <span class="glossaire-def">{{ item.signification }}</span>
+      </div>
+    }
+  </div>
+
+  <!-- Budget indicatif -->
+  <div class="section-collapsible">
+    <div class="section-collapsible-header" (click)="budgetOuvert = !budgetOuvert">
+      <h3>Cadre budgétaire indicatif</h3>
+      <span>{{ budgetOuvert ? '▲' : '▼' }}</span>
+    </div>
+    @if (budgetOuvert) {
+      <p class="note-indicateurs">Le chiffrage détaillé sera produit après l'audit financier de début de mandat (mesure 208). Les fourchettes ci-dessous sont des ordres de grandeur.</p>
+      <div class="budget-table">
+        <div class="budget-header-row">
+          <span>Poste</span>
+          <span>Estimation</span>
+          <span>Sources de financement</span>
+          <span>Mesures</span>
+        </div>
+        @for (row of budgetIndicatif; track $index) {
+          <div class="budget-row">
+            <span class="budget-poste">{{ row.poste }}</span>
+            <span class="budget-estimation">{{ row.estimation }}</span>
+            <span class="budget-sources">{{ row.sources }}</span>
+            <span class="budget-mesures">{{ row.mesures }}</span>
+          </div>
+        }
+      </div>
+      <p class="note-indicateurs">Principe : chaque grand projet fait l'objet d'un plan de financement dédié publié sur le RGPI. L'objectif est de maximiser les financements externes et de terminer le mandat avec des comptes sains.</p>
+    }
+  </div>
+
+  <!-- Analyse des risques -->
+  <div class="section-collapsible">
+    <div class="section-collapsible-header" (click)="risquesOuverts = !risquesOuverts">
+      <h3>Analyse des risques transversale</h3>
+      <span>{{ risquesOuverts ? '▲' : '▼' }}</span>
+    </div>
+    @if (risquesOuverts) {
+      <div class="risques-table">
+        <div class="risques-header-row">
+          <span>Risque</span>
+          <span>Impact</span>
+          <span>Probabilité</span>
+          <span>Mesures d'atténuation</span>
+        </div>
+        @for (row of analyseRisques; track $index) {
+          <div class="risques-row">
+            <span class="risque-titre">{{ row.risque }}</span>
+            <span class="risque-impact" [class.impact-eleve]="row.impact === 'Élevé'" [class.impact-critique]="row.impact === 'Critique'">{{ row.impact }}</span>
+            <span>{{ row.probabilite }}</span>
+            <span>{{ row.attenuation }}</span>
+          </div>
+        }
+      </div>
+      <p class="note-indicateurs">Chaque risque identifié est suivi sur le SEAD avec un responsable, une fréquence de révision et un plan d'action.</p>
+    }
+  </div>
+
+  <!-- Indicateurs de suivi types -->
+  <h3 class="section-title">Indicateurs de suivi types</h3>
+  <ul class="indicateurs-list">
+    @for (ind of indicateursTypes; track $index) {
+      <li>{{ ind }}</li>
+    }
+  </ul>
+
+  <!-- Documents de référence -->
+  <h3 class="section-title">Documents de référence</h3>
+  <ul class="indicateurs-list">
+    @for (doc of documentsReference; track $index) {
+      <li>{{ doc }}</li>
+    }
+  </ul>
+
+</div>

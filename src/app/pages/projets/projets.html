@@ -1,0 +1,42 @@
+<div class="page">
+  <h2 class="page-title">Grands projets structurants</h2>
+
+  @for (projet of projets; track projet.titre; let i = $index) {
+    <div class="projet-card">
+      <div class="projet-header" (click)="toggleProjet(i)">
+        <span class="projet-icon">{{ projet.icone }}</span>
+        <div class="projet-info">
+          <h3>{{ projet.titre }}</h3>
+          <p>{{ projet.description }}</p>
+        </div>
+        <span class="projet-toggle">{{ projetOuvert === i ? '▲' : '▼' }}</span>
+      </div>
+
+      @if (projetOuvert === i) {
+        <div class="projet-body">
+
+          @if (projet.citation) {
+            <blockquote>{{ projet.citation }}</blockquote>
+          }
+
+          <h4>Composantes</h4>
+          @for (comp of projet.composantes; track $index) {
+            <div class="composante-item">
+              <strong class="composante-titre">{{ comp.titre }}</strong>
+              <p class="composante-detail">{{ comp.detail }}</p>
+            </div>
+          }
+
+          <div class="projet-impacts">
+            <h4>Impacts attendus</h4>
+            <ul>
+              @for (impact of projet.impacts; track $index) {
+                <li>{{ impact }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

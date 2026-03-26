@@ -1,0 +1,55 @@
+<div class="page">
+
+  <h2 class="page-title">Pouvoir d'achat</h2>
+  <p class="page-intro">
+    La ville utilise sa capacité de négociation collective et ses leviers d'action
+    pour réduire le coût de la vie des Blanc-Mesnilois, poste par poste.
+  </p>
+
+  <!-- Tableau des 14 postes de dépense -->
+  <h3 class="section-title">Agir sur les principales dépenses</h3>
+  <div class="pouvoir-achat-table">
+    <div class="pa-header-row">
+      <span>Poste de dépense</span>
+      <span>Levier municipal</span>
+      <span>Mesures</span>
+    </div>
+    @for (row of pouvoirAchat; track $index) {
+      <div class="pa-row">
+        <span class="pa-poste">{{ row.poste }}</span>
+        <span class="pa-levier">{{ row.levier }}</span>
+        <span class="pa-mesures">{{ row.mesures }}</span>
+      </div>
+    }
+  </div>
+
+  <p class="pa-principe">
+    La collectivité utilise sa force de négociation et sa capacité d'organisation
+    pour offrir aux habitants des services et des prix inaccessibles individuellement
+    — sans se substituer au marché, mais en l'orientant vers l'intérêt collectif.
+  </p>
+
+  <!-- Cadre de compétences -->
+  <h3 class="section-title">Cadre de compétences — Ce que la ville peut et ne peut pas faire</h3>
+  <div class="cadre-table">
+    <div class="cadre-header-row">
+      <span>Levier</span>
+      <span>Action directe</span>
+      <span>Via partenaires</span>
+      <span>Hors compétence</span>
+    </div>
+    @for (row of cadreCompetences; track row.levier) {
+      <div class="cadre-row">
+        <span class="cadre-levier">{{ row.levier }}</span>
+        <span>{{ row.direct }}</span>
+        <span>{{ row.partenaires }}</span>
+        <span class="cadre-impossible">{{ row.impossible }}</span>
+      </div>
+    }
+  </div>
+  <p class="cadre-note">
+    Cette clarification garantit que la stratégie pouvoir d'achat reste dans le cadre
+    des compétences communales et ne s'expose pas à un risque juridique.
+  </p>
+
+</div>

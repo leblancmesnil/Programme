@@ -1,0 +1,269 @@
+.outils-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary, #1a3c5e);
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    color: #555;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.vague-legend {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  &.vague-1 { background: #dbeafe; color: #1e40af; }
+  &.vague-2 { background: #ede9fe; color: #6d28d9; }
+  &.vague-3 { background: #fce7f3; color: #9d174d; }
+}
+
+// ── Section headings ──
+.section-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary, #1a3c5e);
+  margin: 0 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+// ═══════════════════════════════════════════
+// Section 1 — Accès rapide aux plateformes
+// ═══════════════════════════════════════════
+.acces-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.acces-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.6rem;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  transition: box-shadow 0.15s;
+
+  &.acces-actif {
+    border-color: var(--color-primary, #1a3c5e);
+    &:hover { box-shadow: 0 4px 12px rgba(26, 60, 94, 0.12); }
+  }
+  &.acces-inactif {
+    opacity: 0.55;
+  }
+}
+
+.acces-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 90px;
+}
+
+.tool-icon { width: 28px; height: 28px; object-fit: contain; display: inline-block; }
+
+.acces-sigle {
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--color-primary, #1a3c5e);
+
+  .acces-inactif & { color: #9ca3af; }
+}
+
+.acces-center {
+  flex: 1;
+  min-width: 0;
+}
+
+.acces-nom {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1e293b;
+
+  .acces-inactif & { color: #6b7280; }
+}
+
+.acces-right {
+  flex-shrink: 0;
+}
+
+.acces-btn {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  text-decoration: none;
+
+  &.live {
+    background: #166534;
+    color: #fff;
+    &:hover { background: #14532d; }
+  }
+  &.soon {
+    background: #f3f4f6;
+    color: #9ca3af;
+    cursor: default;
+  }
+}
+
+// ═══════════════════════════════════════════
+// Section 2 — Comprendre chaque outil
+// ═══════════════════════════════════════════
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* one card per row, stretched */
+  gap: 1rem;
+}
+
+.detail-card {
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .card-left { display:flex; align-items:center; gap:0.6rem; }
+  .card-icon { font-size:1.2rem; }
+  .detail-card .tool-icon { width: 34px; height: 34px; }
+
+  .sigle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--color-primary, #1a3c5e);
+  }
+
+  h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+    color: #1e293b;
+  }
+
+  p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #374151;
+  }
+
+  &.enq-card {
+    grid-column: 1 / -1;
+  }
+
+  .detail-actions { margin-top: 0.5rem; }
+  .acces-btn.in-card { margin-right: 0.5rem; }
+}
+
+// ENQ expanded content
+.enq-services {
+  list-style: none;
+  padding: 0;
+  margin: 0.25rem 0 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.4rem 1rem;
+
+  li {
+    font-size: 0.82rem;
+    color: #6b7280;
+    line-height: 1.5;
+    padding-left: 1rem;
+    position: relative;
+
+    &::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: #9ca3af;
+    }
+
+    strong { color: #4b5563; }
+  }
+}
+
+.enq-regle {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  font-style: italic;
+  border-left: 3px solid #e5e7eb;
+  padding-left: 0.75rem;
+  margin: 0.25rem 0 0.75rem;
+}
+
+.enq-quartiers {
+  h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6b7280;
+    margin: 0 0 0.5rem;
+  }
+}
+
+.quartiers-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.3rem 1rem;
+
+  li {
+    font-size: 0.82rem;
+    color: #6b7280;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+}
+
+.q-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #9ca3af;
+  min-width: 1.4rem;
+  text-align: right;
+}

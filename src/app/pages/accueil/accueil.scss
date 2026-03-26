@@ -1,0 +1,67 @@
+.page { padding-top: .5rem; }
+
+// ── Vision ──
+.vision-card { border-left: 4px solid #1B4965; }
+.vision-text { font-size: 1rem; line-height: 1.7; color: #333; margin: 0 0 1rem; }
+
+// ── Piliers ──
+.piliers-grid { display: flex; flex-direction: column; gap: .75rem; }
+.pilier-item {
+  display: flex; align-items: flex-start; gap: .75rem;
+  p { margin: 0; font-size: .9rem; line-height: 1.5; color: #333; }
+}
+.pilier-number {
+  width: 32px; height: 32px; min-width: 32px;
+  border-radius: 50%; background: #1B4965; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .85rem;
+}
+
+// ── Mesures phares ──
+.phares-grid { display: flex; flex-direction: column; gap: .5rem; }
+.phare-item {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .5rem .75rem; border-radius: .5rem; background: #f8f9fa;
+}
+.phare-numero {
+  width: 36px; height: 36px; min-width: 36px;
+  border-radius: .5rem; background: #1B4965; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .8rem;
+}
+.phare-info { display: flex; flex-direction: column; gap: .15rem; strong { font-size: .9rem; color: #212529; } }
+.phare-chapitre { font-size: .75rem; color: #888; }
+
+// ── Preuves de méthode ──
+.preuves-list { display: flex; flex-direction: column; gap: .75rem; }
+.preuve-item {
+  display: flex; align-items: flex-start; gap: .75rem;
+  p { margin: 0; font-size: .9rem; line-height: 1.5; color: #333; }
+}
+.preuve-number {
+  width: 28px; height: 28px; min-width: 28px;
+  border-radius: 50%; background: #2A9D8F; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .8rem;
+}
+
+// ── Profils ──
+.profils-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+.profil-item {
+  background: #f8f9fa; border-radius: .5rem; padding: 1rem; border-left: 3px solid #0077B6;
+  h3 { margin: 0 0 .35rem; font-size: .95rem; font-weight: 700; color: #1B4965; }
+  p  { margin: 0 0 .5rem; font-size: .85rem; color: #555; line-height: 1.4; }
+}
+.profil-mesures { font-size: .75rem; color: #0077B6; font-weight: 600; }
+
+@media (max-width: 768px) {
+  .profils-grid { grid-template-columns: 1fr; }
+}
+
+// ── Motivation ──
+.motivation-card { border-left: 4px solid #E63946; }
+.motivation-intro { font-size: .95rem; line-height: 1.7; color: #333; margin: 0 0 1rem; font-style: italic; }
+.motivation-points {
+  display: flex; flex-direction: column; gap: .75rem; margin-bottom: 1rem;
+  p { margin: 0; font-size: .9rem; line-height: 1.6; color: #444; }
+}

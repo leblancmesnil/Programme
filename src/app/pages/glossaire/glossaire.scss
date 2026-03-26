@@ -1,0 +1,74 @@
+.page { padding-top: .5rem; }
+
+.glossaire-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: .5rem;
+}
+.glossaire-item {
+  display: flex; align-items: center; gap: .75rem; padding: .5rem .75rem;
+  background: #fff; border-radius: .5rem; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+.glossaire-sigle {
+  background: #1B4965; color: #fff; font-weight: 800; font-size: .7rem;
+  padding: .3rem .6rem; border-radius: .35rem; min-width: 52px; text-align: center;
+}
+.glossaire-def { font-size: .85rem; color: #333; }
+
+.section-title { font-size: 1.1rem; font-weight: 700; color: #1B4965; margin: 1.5rem 0 .75rem; border-bottom: 2px solid #e9ecef; padding-bottom: .35rem; }
+
+// ── Collapsible ──
+.section-collapsible { background: #fff; border-radius: .75rem; box-shadow: 0 1px 3px rgba(0,0,0,.06); margin-bottom: .75rem; overflow: hidden; }
+.section-collapsible-header {
+  display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem;
+  cursor: pointer; &:hover { background: #f8f9fa; }
+  h3 { margin: 0; font-size: .95rem; font-weight: 700; color: #1B4965; }
+  span { font-size: .8rem; color: #999; }
+}
+
+// ── Budget ──
+.budget-table { overflow-x: auto; padding: 0 1.25rem 1.25rem; }
+.budget-header-row {
+  display: grid; grid-template-columns: 2fr .8fr 2fr .5fr; gap: 1rem; padding: .6rem .75rem;
+  background: #1B4965; color: #fff; font-weight: 700; font-size: .78rem; text-transform: uppercase;
+  border-radius: .35rem; min-width: 600px;
+}
+.budget-row {
+  display: grid; grid-template-columns: 2fr .8fr 2fr .5fr; gap: 1rem; padding: .6rem .75rem;
+  border-bottom: 1px solid #f5f5f5; font-size: .83rem; align-items: start; min-width: 600px;
+  &:nth-child(even) { background: #f8f9fa; }
+}
+.budget-poste { color: #333; line-height: 1.4; }
+.budget-estimation { font-weight: 700; color: #1B4965; }
+.budget-sources { color: #555; line-height: 1.4; font-size: .78rem; }
+.budget-mesures { color: #0077B6; font-weight: 600; font-size: .78rem; }
+
+// ── Risques ──
+.risques-table { overflow-x: auto; padding: 0 1.25rem 1.25rem; }
+.risques-header-row {
+  display: grid; grid-template-columns: 2fr .7fr .7fr 2fr; gap: 1rem; padding: .6rem .75rem;
+  background: #E63946; color: #fff; font-weight: 700; font-size: .78rem; text-transform: uppercase;
+  border-radius: .35rem; min-width: 600px;
+}
+.risques-row {
+  display: grid; grid-template-columns: 2fr .7fr .7fr 2fr; gap: 1rem; padding: .6rem .75rem;
+  border-bottom: 1px solid #f5f5f5; font-size: .83rem; align-items: start; min-width: 600px;
+  &:nth-child(even) { background: #f8f9fa; }
+}
+.risque-titre { color: #333; font-weight: 600; line-height: 1.4; }
+.risque-impact {
+  font-weight: 700; color: #333; padding: .2rem .45rem; border-radius: .3rem;
+  &.impact-eleve { background: #fff3cd; color: #664d03; }
+  &.impact-critique { background: #f8d7da; color: #842029; }
+}
+
+// ── Listes ──
+.indicateurs-list {
+  background: #fff; border-radius: .5rem; box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  padding: 1rem 1rem 1rem 2rem; margin: 0;
+  li { font-size: .88rem; color: #444; line-height: 1.6; margin-bottom: .25rem; }
+}
+.note-indicateurs { font-size: .8rem; color: #888; font-style: italic; margin: .5rem 1.25rem .25rem; }
+
+@media (max-width: 768px) {
+  .glossaire-grid { grid-template-columns: 1fr; }
+  .budget-header-row, .budget-row, .risques-header-row, .risques-row { grid-template-columns: 1fr; min-width: 0; }
+}

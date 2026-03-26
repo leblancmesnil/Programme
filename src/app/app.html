@@ -1,0 +1,46 @@
+<!-- ── Header ── -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-logo">
+        <img src="assets/logo.gif" alt="Logo Le Blanc-Mesnil" class="header-logo-img">
+      </div>
+      <div class="header-text">
+        <h1>Programme de Mandat — Blanc-Mesnil</h1>
+        <p>213 mesures pour une ville digne, sûre et ambitieuse</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ── Navigation ── -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a routerLink="/accueil"       routerLinkActive="active"><span class="nav-icon">🏠</span> Accueil</a>
+    <a routerLink="/mesures"       routerLinkActive="active"><span class="nav-icon">🗂️</span> Mesures</a>
+    <a routerLink="/cent-jours"    routerLinkActive="active"><span class="nav-icon">⏱️</span> 100 Jours</a>
+    <a routerLink="/timeline"      routerLinkActive="active"><span class="nav-icon">🕰️</span> Timeline</a>
+    <a routerLink="/projets"       routerLinkActive="active"><span class="nav-icon">🚧</span> Grands Projets</a>
+    <a routerLink="/gouvernance"   routerLinkActive="active"><span class="nav-icon">⚖️</span> Gouvernance</a>
+    <a routerLink="/pouvoir-achat" routerLinkActive="active"><span class="nav-icon">💸</span> Pouvoir d'achat</a>
+    <a routerLink="/glossaire"     routerLinkActive="active"><span class="nav-icon">📚</span> Annexes</a>
+    <a routerLink="/outils"        routerLinkActive="active"><span class="nav-icon">🔧</span> Outils</a>
+  </div>
+</nav>
+
+<!-- ── Page outlet ── -->
+<main class="main">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- ── Footer ── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <p>Programme de Mandat — Blanc-Mesnil</p>
+    <p class="footer-sub">Programme · Transparence · Évaluation continue</p>
+    <a class="footer-download" href="programme.pdf" download="Programme-BlancMesnil.pdf">
+      ⬇ Télécharger le programme complet (PDF)
+    </a>
+  </div>
+</footer>
+

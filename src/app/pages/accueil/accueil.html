@@ -1,0 +1,82 @@
+<div class="page">
+
+  <!-- Vision -->
+  <div class="card vision-card">
+    <h2>Notre Vision</h2>
+    <p class="vision-text">{{ vision }}</p>
+    <blockquote>L'utopie devient crédible lorsqu'elle est organisée, mesurée et assumée.</blockquote>
+    @for (para of visionEtendue; track $index) {
+      <p class="vision-text">{{ para }}</p>
+    }
+  </div>
+
+  <!-- 5 Piliers -->
+  <div class="card">
+    <h2>5 piliers du programme</h2>
+    <div class="piliers-grid">
+      @for (pilier of piliers; track $index) {
+        <div class="pilier-item">
+          <span class="pilier-number">{{ $index + 1 }}</span>
+          <p>{{ pilier }}</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Mesures phares -->
+  <div class="card">
+    <h2>15 mesures phares du mandat</h2>
+    <div class="phares-grid">
+      @for (m of mesuresPhares; track m.id) {
+        <div class="phare-item">
+          <span class="phare-numero">{{ m.id }}</span>
+          <div class="phare-info">
+            <strong>{{ m.titre }}</strong>
+            <span class="phare-chapitre">{{ m.chapitre }}</span>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- 5 preuves de méthode -->
+  <div class="card">
+    <h2>5 preuves de méthode</h2>
+    <div class="preuves-list">
+      @for (preuve of preuvesMethode; track $index) {
+        <div class="preuve-item">
+          <span class="preuve-number">{{ $index + 1 }}</span>
+          <p>{{ preuve }}</p>
+        </div>
+      }
+    </div>
+    <blockquote>{{ citationMethode }}</blockquote>
+  </div>
+
+  <!-- Profils -->
+  <div class="card">
+    <h2>Lire le programme selon votre profil</h2>
+    <div class="profils-grid">
+      @for (p of profils; track p.nom) {
+        <div class="profil-item">
+          <h3>{{ p.nom }}</h3>
+          <p>{{ p.description }}</p>
+          <span class="profil-mesures">Mesures {{ p.mesures }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Motivation et engagement -->
+  <div class="card motivation-card">
+    <h2>Notre engagement</h2>
+    <p class="motivation-intro">{{ motivation.intro }}</p>
+    <div class="motivation-points">
+      @for (pt of motivation.points; track $index) {
+        <p>{{ pt }}</p>
+      }
+    </div>
+    <blockquote>{{ motivation.conclusion }}</blockquote>
+  </div>
+
+</div>
