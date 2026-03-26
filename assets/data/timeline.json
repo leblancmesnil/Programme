@@ -1,0 +1,9 @@
+{
+  "timeline": [
+    { "annee": "Année 1", "livrables": "PSE en ligne · Budget pédagogique publié · Audit financier · Charte éthique adoptée · Premières patrouilles · Guichet unique logement · Mutuelle communale · Imagin'R opérationnel · PCS adopté · Plan de végétalisation · Premier budget participatif" },
+    { "annee": "Année 2", "livrables": "Ouverture Maison de l'Emploi · Premières maisons de santé · Pistes cyclables prioritaires · ZAC conception lancée · Campus trilingue en cours · Festival culturel 1ère édition · Conseil municipal des jeunes actif" },
+    { "annee": "Année 3", "livrables": "Travaux ZAC (parc, arène) · Montée en charge dispositifs insertion · Bilans intermédiaires · Navettes municipales déployées · Plan « Savoir nager » opérationnel · Ferme pédagogique · Réserve communale opérationnelle" },
+    { "annee": "Année 4", "livrables": "Livraison premiers équipements ZAC · Inauguration campus trilingue (phase 1) · Maison des Associations des Tilleuls · Végétalisation étendue · Évaluation mi-mandat · Audit financier mi-mandat" },
+    { "annee": "Année 5", "livrables": "Finalisation grands projets · Équipements restants campus trilingue · Rapport de fin de mandat · Transmission des bilans · Pérennisation des dispositifs" }
+  ]
+}

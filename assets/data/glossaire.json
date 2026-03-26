@@ -1,0 +1,22 @@
+{
+  "glossaire": [
+    { "sigle": "PSE",    "signification": "Plateforme de Suivi des Engagements" },
+    { "sigle": "ENQ",    "signification": "Espaces Numériques de Quartier" },
+    { "sigle": "PTB",    "signification": "Portail de Transparence Budgétaire et des Marchés Publics" },
+    { "sigle": "PIPC",   "signification": "Plateforme d'Interpellation et de Participation Citoyenne" },
+    { "sigle": "RGPI",   "signification": "Registre des Grands Projets et Investissements" },
+    { "sigle": "SEAD",   "signification": "Système d'Évaluation et d'Aide à la Décision" },
+    { "sigle": "PCS",    "signification": "Plan Communal de Sauvegarde" },
+    { "sigle": "PCC",    "signification": "Poste de Commandement Communal" },
+    { "sigle": "RCSC",   "signification": "Réserve Communale de Sécurité Civile" },
+    { "sigle": "DICRIM", "signification": "Document d'Information Communal sur les Risques Majeurs" },
+    { "sigle": "CCAS",   "signification": "Centre Communal d'Action Sociale" },
+    { "sigle": "PLU",    "signification": "Plan Local d'Urbanisme" },
+    { "sigle": "MAM",    "signification": "Maison d'Assistantes Maternelles" },
+    { "sigle": "ESS",    "signification": "Économie Sociale et Solidaire" },
+    { "sigle": "CIA",    "signification": "Complément Indemnitaire Annuel" },
+    { "sigle": "TEOM",   "signification": "Taxe d'Enlèvement des Ordures Ménagères" },
+    { "sigle": "ZAC",    "signification": "Zone d'Aménagement Concerté" },
+    { "sigle": "OIM",    "signification": "Opération d'Intérêt Métropolitain" }
+  ]
+}

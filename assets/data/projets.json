@@ -1,0 +1,55 @@
+{
+  "grandsProjets": [
+    {
+      "titre": "ZAC de la Molette — Parc culturel, éducatif et économique",
+      "icone": "🏗️",
+      "description": "Réorienter la ZAC en grand pôle piéton, culturel, éducatif et économique — un lieu de destination, pas un programme immobilier.",
+      "composantes": [
+        "Campus trilingue — vitrine éducative internationale (français, anglais, chinois)",
+        "Grand parc central — lieu de détente, de rencontre, espace culturel vivant",
+        "Arène à ciel ouvert — scène permanente, programmation hebdomadaire, stands de restauration",
+        "Zone commerciale et restauration — restaurants, food court, complémentarité avec le Leclerc existant",
+        "Outlet — destination shopping et culture combinées, emploi des jeunes",
+        "Zone 100 % piétonne — accès via transports en commun et mobilités douces"
+      ],
+      "impacts": "Éducation et excellence · Culture et vivre-ensemble · Attractivité métropolitaine · Emploi local · Fierté d'appartenance · Jeunesse valorisée · Image positive du Blanc-Mesnil"
+    },
+    {
+      "titre": "Quartier des Tilleuls — Rénovation culturelle et sociale",
+      "icone": "🏘️",
+      "description": "La rénovation des Tilleuls prolonge la dynamique de la Molette. Culture partout, pour tous.",
+      "composantes": [
+        "Programmation de proximité : spectacles locaux, initiatives associatives",
+        "Maison des Associations : lieu de ressources et d'ancrage citoyen",
+        "Dynamisation sans exclusion : rénovation du cadre de vie sans déplacer les habitants",
+        "Maintien des habitants : rénovation prioritaire des logements existants, mixité fonctionnelle"
+      ],
+      "impacts": "Cadre de vie amélioré · Vie associative renforcée · Mixité sociale préservée · Connexion via le nouveau métro"
+    },
+    {
+      "titre": "Maison de l'Emploi et de l'Entrepreneuriat",
+      "icone": "💼",
+      "description": "Implantée à proximité de la zone d'activité du Coudray, pour faciliter les partenariats entre entreprises locales et dispositifs d'insertion.",
+      "composantes": [
+        "Accompagnement ciblé des profils capables de créer leur activité",
+        "Espace de coworking et incubateur de startups",
+        "Fonds municipal d'amorçage",
+        "Recherche de sponsors et partenaires de haut niveau"
+      ],
+      "impacts": "Création d'entreprises · Emploi local · Insertion professionnelle · Dynamisme économique"
+    },
+    {
+      "titre": "Plan santé de proximité",
+      "icone": "🏥",
+      "description": "Un réseau de soins accessibles dans tous les quartiers.",
+      "composantes": [
+        "Maison de santé pluridisciplinaire 360",
+        "Cabinets médicaux de proximité dans les quartiers",
+        "Mutuelle communale",
+        "Centres de dépistage mobiles",
+        "Plan d'attractivité pour les professionnels de santé"
+      ],
+      "impacts": "Accès aux soins amélioré · Prévention renforcée · Attractivité médicale · Couverture santé élargie"
+    }
+  ]
+}
