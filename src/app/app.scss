@@ -60,6 +60,36 @@
   p  { margin: .2rem 0 0; opacity: .85; font-size: .9rem; }
 }
 
+/* Header actions (right side) */
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.discord-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  padding: .38rem .6rem;
+  border-radius: .45rem;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background .15s, transform .06s;
+}
+
+.discord-link:hover { background: rgba(255,255,255,0.12); transform: translateY(-1px); }
+.discord-icon { font-size: 1rem; line-height: 1; }
+
+@media (max-width: 600px) {
+  .header-actions { margin-top: .5rem; margin-left: 0; }
+  .discord-text { display: none; }
+}
+
 // ── Navigation ──
 .nav-bar {
   background: #fff;
@@ -146,7 +176,14 @@
 @media (max-width: 768px) {
   .header-inner  { flex-direction: column; text-align: center; }
   .header-brand  { flex-direction: column; }
-  .nav-inner     { gap: 0; }
+  .nav-inner     {
+    gap: 0;
+    overflow-x: auto; /* allow horizontal scroll on small screens */
+    -webkit-overflow-scrolling: touch;
+    padding: 0 .5rem;
+  }
+
+  .nav-inner a { flex: 0 0 auto; }
 }
 
 .header-inner {
@@ -390,6 +427,21 @@ blockquote {
   gap: .75rem;
 
   p { margin: 0; font-size: .9rem; line-height: 1.5; color: #333; }
+}
+
+/* Ensure nav is horizontally scrollable on small devices even if other rules override */
+@media (max-width: 768px) {
+  .nav-inner {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 .5rem !important;
+  }
+
+  .nav-inner a,
+  .nav-inner button {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
 }
 
 .preuve-number {
